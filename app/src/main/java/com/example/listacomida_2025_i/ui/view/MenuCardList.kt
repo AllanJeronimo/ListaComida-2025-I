@@ -14,12 +14,12 @@ fun MenuCardList(
     modifier: Modifier
 ){
     LazyColumn (modifier){
-    items(platilloList){
-        platillo -> MenuCard(
+        items(platilloList){
+                platillo -> MenuCard(
             platillo = platillo,
-            modifier.padding(10.dp)
+            Modifier.padding(10.dp)
         )
-    }
+        }
     }
 
 }
