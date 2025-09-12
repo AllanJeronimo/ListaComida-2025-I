@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
@@ -22,18 +21,22 @@ import com.example.listacomida_2025_i.model.Platillo
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Alignment
+import com.example.listacomida_2025_i.R
+import com.example.listacomida_2025_i.ui.theme.ListaComida2025ITheme
+import com.example.listacomida_2025_i.data.DataSource
 
 @Composable
 fun MenuCard(
     platillo: Platillo,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ){
     Card (modifier){
         Row(
             modifier = Modifier.padding(16.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Image   (
+            Image(
                 painter = painterResource(id=platillo.drawableResourceId),
                 contentDescription = stringResource(id=platillo.stringResourcesId),
                 modifier=Modifier
@@ -47,11 +50,11 @@ fun MenuCard(
             ){
                 Text(
                     text = LocalContext.current.getString(platillo.stringResourcesId),
-                    style = MaterialTheme.typography.headlineLarge
+                    style = MaterialTheme.typography.displayLarge
                 )
                 Text(
                     text = platillo.precio,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.labelSmall
                 )
                 Text(
                     text = platillo.oferta,

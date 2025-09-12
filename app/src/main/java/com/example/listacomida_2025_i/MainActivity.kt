@@ -37,3 +37,7 @@ fun MenuApp(modifier: Modifier){
         modifier
     )
 }
+
+@Composable
+fun MenuTopBar(modifier: Modifier ){}
+
